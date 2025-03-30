@@ -11,6 +11,7 @@ CORS(app)
 
 load_dotenv
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 @app.route("/humanized", methods=["POST"])
 def humanize_text():
@@ -19,3 +20,19 @@ def humanize_text():
 
     if not ai_text:
         return jsonify({"error": "u gotta put in text bro"}), 400
+
+    prompt = f"""
+
+    """
+
+    messages = [
+        {
+            "role": "system",
+            "content": "You are an artificial intelligence assistant and you need to "
+            "engage in a helpful, detailed, polite conversation with a user.",
+        },
+        {
+            "role": "user",
+            "content": prompt,
+        },
+    ]
