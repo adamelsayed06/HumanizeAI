@@ -51,6 +51,18 @@ AI text tends to be less “bursty” than human text. Because language models p
 
 Low burstiness indicates that a text is likely to be AI-generated.
 
+Here is a portion of text that is ai generated. {ai_text} Go through it and identify some weaknesses that could be exploited by an AI detector. Your goal
+is to not get caught by these AI detectors. Then go through it and rewrite it based off the parameters I've given you. Write like a human.
+
+Write this in JSON format. Here is an example you will follow, adjust the data as needed
+    {{
+        "weaknesses" : "this writing has low perplexity at these points because XYZ",
+        "fixed_text" : "BLAH BLAH BLAH"
+    }}
+
+    Do NOT include any other info besides the JSON. Do all your thinking and analysis in the weaknesses portion of the JSON. 
+    ONLY RETURN IN CORRECT JSON FORMAT, INCLUDE NO OTHER TEXT AND NO EXPLANATION. DO NOT PUT INTO MARKDOWN. DO NOT INCLUDE NEWLINES. DO NOT RETURN COMMENTS.
+
 
 
     """
