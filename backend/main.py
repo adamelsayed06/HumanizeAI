@@ -63,8 +63,6 @@ Write this in JSON format. Here is an example you will follow, adjust the data a
     Do NOT include any other info besides the JSON. Do all your thinking and analysis in the weaknesses portion of the JSON. 
     ONLY RETURN IN CORRECT JSON FORMAT, INCLUDE NO OTHER TEXT AND NO EXPLANATION. DO NOT PUT INTO MARKDOWN. DO NOT INCLUDE NEWLINES. DO NOT RETURN COMMENTS.
 
-
-
     """
 
     completion = client.chat.completions.create(
