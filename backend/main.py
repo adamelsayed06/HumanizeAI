@@ -14,4 +14,8 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 @app.route("/humanized", methods=["POST"])
 def humanize_text():
+    data = request.json
+    ai_text = data.get("aiText")
 
+    if not ai_text:
+        return jsonify({"error": "u gotta put in text bro"}), 400
