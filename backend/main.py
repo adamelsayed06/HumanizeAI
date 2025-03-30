@@ -33,5 +33,7 @@ def humanize_text():
     ]
     )
 
-    print(completion.choices[0].message)
+    output = jsonify(json.loads(completion.choices[0].message))
+    return output
+
 
