@@ -73,7 +73,8 @@ Write this in JSON format. Here is an example you will follow, adjust the data a
     ]
     )
 
-    output = jsonify(json.loads(completion.choices[0].message))
+    output = jsonify(json.loads(completion.choices[0].message.content))
     return output
 
-
+if(__name__ == "__main__"):
+    app.run(debug=True)
