@@ -25,14 +25,13 @@ def humanize_text():
 
     """
 
-    messages = [
-        {
-            "role": "system",
-            "content": "You are an artificial intelligence assistant and you need to "
-            "engage in a helpful, detailed, polite conversation with a user.",
-        },
-        {
-            "role": "user",
-            "content": prompt,
-        },
+    completion = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "developer", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello!"}
     ]
+    )
+
+    print(completion.choices[0].message)
+
